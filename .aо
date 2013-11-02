@@ -1,0 +1,30 @@
+import BigWorld
+from gui.Scaleform.Battle import ConsumablesPanel, DamagePanel
+oOo = 0
+
+def o00o0ooOOO(idx):
+    global oOo
+    oOo = idx
+
+
+I1IIii1i11 = ConsumablesPanel.addEquipmentSlot
+
+def ooO0O0oOOo00O(self, idx, quantity, equipmentDescr):
+    I1IIii1i11(self, idx, quantity, equipmentDescr)
+    if (('extinguisher' in equipmentDescr.tags) and o00o0ooOOO(idx)):
+        pass
+
+
+ConsumablesPanel.addEquipmentSlot = ooO0O0oOOo00O
+II1iiiIii11 = DamagePanel.onFireInVehicle
+
+def o0OOoo0Ooooo0(self, bool):
+    II1iiiIii11(self, bool)
+    if ((oOo != 0) and BigWorld.player().onEquipmentButtonPressed(oOo, 'extinguisher')):
+        pass
+
+
+DamagePanel.onFireInVehicle = o0OOoo0Ooooo0
+
+#+++ okay decompyling
+# decompiled 1 files: 1 okay, 0 failed, 0 verify failed
